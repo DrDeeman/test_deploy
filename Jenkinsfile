@@ -1,12 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
-            steps {
-                bat 'echo "test_dep9"'
-                bat 'mvn -B -DskipTests clean package'
-            }
-        }
+          stage('Fetch Code') {
+                    steps {
+                        git "git@github.com:DrDeeman/test_deploy.git"
+                    }
+                }
 
         stage('Code Analysis') {
                     environment {
