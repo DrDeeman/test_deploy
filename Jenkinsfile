@@ -3,7 +3,7 @@ pipeline {
     stages {
           stage('Fetch Code') {
                     steps {
-                        git "git@github.com:DrDeeman/test_deploy.git"
+                        git "https://github.com/DrDeeman/test_deploy.git"
                     }
                 }
 
