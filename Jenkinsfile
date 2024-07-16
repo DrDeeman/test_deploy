@@ -13,13 +13,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building deploy project...'
-                sh 'npm install'
+                bat 'npm install'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing deploy project...'
-                sh 'npm test'
+                bat 'npm test'
             }
         }
     }
