@@ -18,6 +18,7 @@ public class AppTest
         assertEquals(1,new App.Test().test());
     }
 
+    @Test
     void test2(){
         assertEquals(1,new App.Test().test2());
     }
