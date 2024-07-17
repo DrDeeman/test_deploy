@@ -9,9 +9,11 @@ pipeline {
                 }
 
           stage('Run tests'){
-              withMaven{
-                 bat "mvn clean install"
-              }
+             steps{
+                   withMaven{
+                       bat "mvn clean install"
+                   }
+             }
           }
 
         stage('Code Analysis') {
