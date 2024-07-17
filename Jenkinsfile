@@ -14,7 +14,7 @@ pipeline {
                     steps {
                         script {
                             withSonarQubeEnv('test_sonar') {
-                                sh "${scannerHome}/bin/sonar-scanner \
+                                bat "${scannerHome}/bin/sonar-scanner \
                                     -D sonar.projectKey=FSP \
                                     -D sonar.projectName=sonar_project \
                                     -D sonar.projectVersion=1.0 \
