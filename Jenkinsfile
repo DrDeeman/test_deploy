@@ -10,9 +10,7 @@ pipeline {
 
           stage('Run tests'){
              steps{
-                   withMaven{
-                       bat "mvn clean install"
-                   }
+                     mvn "clean install"
              }
           }
 
