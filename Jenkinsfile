@@ -17,7 +17,7 @@ pipeline {
                                 bat "${scannerHome}/bin/sonar-scanner \
                                     -D sonar.projectKey=sonar_project \
                                     -D sonar.java.coveragePlugin=jacoco \
-                                    -D sonar.jacoco.reportPaths=target/jacoco.exec \
+                                    -D sonar.jacoco.reportPath=target/jacoco.exec \
                                     -D sonar.java.checkstyle.reportPaths=target/site/index.html \
                                     -D sonar.projectVersion=1.0 \
                                     -D sonar.java.binaries=target \
