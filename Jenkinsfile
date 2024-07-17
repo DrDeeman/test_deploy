@@ -1,11 +1,18 @@
 pipeline {
     agent any
     stages {
+
           stage('Fetch Code') {
                     steps {
                         git "https://github.com/DrDeeman/test_deploy.git"
                     }
                 }
+
+          stage('Run tests'){
+              withMaven(){
+                 bat "mvn clean install"
+              }
+          }
 
         stage('Code Analysis') {
                     environment {
