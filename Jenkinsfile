@@ -8,13 +8,6 @@ pipeline {
                     }
                 }
 
-          stage('Settings workers'){
-          steps{
-             withMaven(){}
-             withSonarQubeEnv('test_sonar') {}
-             }
-
-          }
 
           stage('Run tests'){
              steps{
