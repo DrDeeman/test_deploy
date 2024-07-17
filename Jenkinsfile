@@ -15,10 +15,10 @@ pipeline {
                         script {
                             withSonarQubeEnv('test_sonar') {
                                 bat "${scannerHome}/bin/sonar-scanner \
-                                    -D sonar.projectKey=FSP \
-                                    -D sonar.projectName=sonar_project \
+                                    -D sonar.projectKey=sonar_project \
                                     -D sonar.projectVersion=1.0 \
                                     -D sonar.java.binaries=target \
+                                    -D sonar.host.url=http://localhost:9000 \
                                     -D sonar.token=sqp_f11eb091e8c50024a813cb5dd205a1fba0ea434a"
                             }
                         }
