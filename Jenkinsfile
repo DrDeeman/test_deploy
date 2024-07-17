@@ -16,6 +16,7 @@ pipeline {
                             withSonarQubeEnv('test_sonar') {
                                 bat "${scannerHome}/bin/sonar-scanner \
                                     -D sonar.projectKey=sonar_project \
+                                    -D sonar.jacoco.reportPath=${project.basedir}/../target/jacoco.exec \
                                     -D sonar.projectVersion=1.0 \
                                     -D sonar.java.binaries=target \
                                     -D sonar.host.url=http://localhost:9000 \
