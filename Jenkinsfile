@@ -23,7 +23,7 @@ pipeline {
                     steps {
                         script {
                             withSonarQubeEnv('test_sonar') {
-                                bat "mvn clean sonar:sonar \
+                                bat "mvn clean verify sonar:sonar \
                                     -D sonar.projectKey=sonar_project \
                                     -D sonar.java.coveragePlugin=jacoco \
                                     -D sonar.jacoco.reportPath=target/jacoco.exec \
