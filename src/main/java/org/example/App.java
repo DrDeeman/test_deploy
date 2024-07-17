@@ -11,4 +11,12 @@ public class App
 
         System.out.println( "Hello World! I am alive" );
     }
+
+    static class Test{
+        int test(){
+           int i = 0;
+           i=i+1;
+           return i;
+        }
+    }
 }
