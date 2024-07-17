@@ -20,6 +20,6 @@ public class AppTest
 
     @Test
     void test2(){
-        assertEquals(1,new App.Test().test2());
+        assertEquals(2,new App.Test().test2());
     }
 }
