@@ -9,8 +9,10 @@ pipeline {
                 }
 
           stage('Settings workers'){
+          steps{
              withMaven(){}
              withSonarQubeEnv('test_sonar') {}
+             }
 
           }
 
