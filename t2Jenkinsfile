@@ -1,0 +1,7 @@
+
+
+node('agent'){
+     stage('fetch project'){
+
+     }
+}

@@ -24,5 +24,11 @@ public class App
             i=i+2;
             return i;
         }
+
+        int test3(){
+            int i = 0;
+            i=i+3;
+            return i;
+        }
     }
 }
