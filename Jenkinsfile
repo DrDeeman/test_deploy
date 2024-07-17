@@ -18,7 +18,7 @@ pipeline {
                                     -D sonar.projectKey=FSP \
                                     -D sonar.projectName=sonar_project \
                                     -D sonar.projectVersion=1.0 \
-                                    -D sonar.java.binary=target \
+                                    -D sonar.java.binaries=target \
                                     -D sonar.token=sqp_f11eb091e8c50024a813cb5dd205a1fba0ea434a"
                             }
                         }
