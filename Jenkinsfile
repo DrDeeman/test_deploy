@@ -1,5 +1,5 @@
-pipeline {
-    agent any
+node(any) {
+
     stages {
 
           stage('Fetch Code') {
