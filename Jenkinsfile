@@ -24,7 +24,7 @@ node{
                                                                    -D sonar.projectVersion=1.0 \
                                                                    -D sonar.java.binaries=target \
                                                                    -D sonar.host.url=http://localhost:9000 \
-                                                                   -D sonar.token=squ_c6a2f5b5f8dee71a49f57571b805a05e4d105ff4"
+                                                                   -D sonar.token=sqp_f11eb091e8c50024a813cb5dd205a1fba0ea434a"
                                     }
                 }
 
