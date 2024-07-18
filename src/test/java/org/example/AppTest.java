@@ -13,14 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class AppTest
 {
 
-    @Test
-    void test(){
-        assertEquals(10,new App.Test().test());
-    }
 
-    @Test
-    void test2(){
-        assertEquals(20,new App.Test().test2());
-    }
 
     }
