@@ -18,9 +18,9 @@ pipeline {
         stage('Code Analysis') {
                     steps {
                      script {
-                              scannerHome = tool 'SonarQube Scanner'
+                              scannerHome = tool 'test_sonar'
                             }
-                            withSonarQubeEnv('SonarQube Scanner') {
+                            withSonarQubeEnv('test_sonar') {
                                 bat "${scannerHome}/bin/sonar-scanner \
                                     -D sonar.projectKey=sonar_project \
                                     -D sonar.java.coveragePlugin=jacoco \
