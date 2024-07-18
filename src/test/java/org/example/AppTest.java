@@ -23,4 +23,27 @@ public class AppTest
         assertEquals(20,new App.Test().test2());
     }
 
+
+    @Test
+    void test4(){
+        assertEquals(40,new App.Test().test2());
+    }
+    @Test
+    void test5(){
+        assertEquals(40,new App.Test().test2());
+    }
+    @Test
+    void test6(){
+        assertEquals(40,new App.Test().test2());
+    }
+    @Test
+    void test7(){
+        assertEquals(40,new App.Test().test2());
+    }
+    @Test
+    void test8(){
+        assertEquals(20,new App.Test().test2());
+    }
+
+
     }
