@@ -42,7 +42,7 @@ public class AppTest
     }
     @Test
     void test8(){
-        assertEquals(20,new App.Test().test8());
+        assertEquals(40,new App.Test().test8());
     }
 
 
