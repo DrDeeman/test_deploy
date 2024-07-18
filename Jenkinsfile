@@ -1,6 +1,4 @@
-node(any) {
-
-    stages {
+node('agent') {
 
           stage('Fetch Code') {
                     steps {
@@ -44,5 +42,5 @@ node(any) {
              }
              }
         }
-    }
+
 }
