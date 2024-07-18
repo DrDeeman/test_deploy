@@ -30,7 +30,7 @@ node{
 
         stage("Quality Gate"){
              timeout(time:1, unit:"MINUTES"){
-                def qg = waitForQualityGate(webhookSecretId: 'Tesari7612345678')
+                def qg = waitForQualityGate()
                 if(qg.status !='OK'){
                    error "Quality Gate not allowed"
                 }
