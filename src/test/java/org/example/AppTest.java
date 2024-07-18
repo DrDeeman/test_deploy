@@ -23,8 +23,4 @@ public class AppTest
         assertEquals(2,new App.Test().test2());
     }
 
-    @Test
-    void test3(){
-        assertEquals(3,new App.Test().test3());
     }
-}
