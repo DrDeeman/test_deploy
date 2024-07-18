@@ -30,5 +30,11 @@ public class App
             i=i+30;
             return i;
         }
+
+        int test4(){
+            int i = 0;
+            i=i+40;
+            return i;
+        }
     }
 }
