@@ -16,12 +16,14 @@ node{
                               scannerHome = tool 'test_sonar'
                             }
                             withSonarQubeEnv('test_sonar') {
-                                bat "mvn clean verify sonar:sonar \
-                                    -D sonar.projectKey=sonar_project \
-                                    -D sonar.java.coveragePlugin=jacoco \
-                                    -D sonar.jacoco.reportPath=target/jacoco.exec \
-                                    -D sonar.java.binaries=target \
-                                    -D sonar.host.url=http://localhost:9000"
+                               bat "mvn clean verify"
+                               bat "${scannerHome}/bin/sonar-scanner \
+                                                                   -D sonar.projectKey=sonar_project \
+                                                                   -D sonar.java.coveragePlugin=jacoco \
+                                                                   -D sonar.jacoco.reportPath=target/jacoco.exec \
+                                                                   -D sonar.projectVersion=1.0 \
+                                                                   -D sonar.java.binaries=target \
+                                                                   -D sonar.host.url=http://localhost:9000"
                                     }
                 }
 
