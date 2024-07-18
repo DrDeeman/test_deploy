@@ -15,12 +15,12 @@ public class AppTest
 
     @Test
     void test(){
-        assertEquals(1,new App.Test().test());
+        assertEquals(10,new App.Test().test());
     }
 
     @Test
     void test2(){
-        assertEquals(2,new App.Test().test2());
+        assertEquals(20,new App.Test().test2());
     }
 
     }

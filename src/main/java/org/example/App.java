@@ -15,19 +15,19 @@ public class App
     static class Test{
         int test(){
            int i = 0;
-           i=i+1;
+           i=i+10;
            return i;
         }
 
         int test2(){
             int i = 0;
-            i=i+2;
+            i=i+20;
             return i;
         }
 
         int test3(){
             int i = 0;
-            i=i+3;
+            i=i+30;
             return i;
         }
     }
