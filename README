@@ -1,0 +1,57 @@
+Для работы данного проекта необходимо настроить:
+
+1)Установить Java 17, Maven, Git
+
+2)Установить Jenkins
+   Его настройка описана на Хабре:
+    a)Установка:https://habr.com/ru/companies/slurm/articles/721520/
+    b)Настройка:https://habr.com/ru/articles/695978/
+
+    Для входа пароль можно взять в:
+    windows - $JENKINS_HOME/jenkins.err
+
+    Установить след. плагины:
+      a)Pipeline Maven Integration Plugin - добавит нтеграцию с Maven, позволит отображать
+          результаты тестов в Jenkins.
+      b)SonarQube Scanner for Jenkins - добавит интеграцию с SonarQube, добавит такие инструменты
+          как:
+               withSonarQubeEnv - анализатор SonarQube для Jenkins, собирает статистику
+                 и отправляет ее на сервер Sonar.
+               waitForQualityGate - собирает с сервера Sonar статистику Quality Gate.
+
+
+
+
+
+
+
+   Также необходимо установить SonarQube( работает по умолчанию на порту 9000).
+   Для запуска необходимо в $SONARQUBE_HOME/bin/windowsx86-64/ запустить StartSonar.bat
+   Для первоначального запуска нужно в $SONARQUBE_HOME/conf/sonar.conf расскоменитровать
+     строки sonar.jdbc.username и sonar.jdbc.password - временные данные для первичного входа
+
+     после ввода новых догина и пароля, создания проекта нужно создать токен доступа по
+     пути: security->users->tokens  - достаточно создать токен уровня "проект"
+     и прописать данный токен в Jenkins по маршруту:
+     личный кабинет(правый верхний угол)->credentials->группа Stores from parent
+     -> нажимаем domain global -> add credentials и заполняем:
+     1)kind - secret text
+     2)secret - токен доступа
+     3) description - описание (заполни, чтоб не путаться)
+
+     пойти в Dashboard->Настроить Jenkins->System
+     и настроить раздел SonarQube:
+     1)выставить галочку Environment variables
+     2)вписать имя модуля
+     3)указать порт (по умолчанию http://localhost:9000)
+
+     Также нужно выставить разрешения для анализа по пути:
+     project settings -> permissions и выставить всем галочки на execute analyze
+
+     Также нужно создать webhook для отправки результатов Quality Gate обратно в Jenkins.
+     По пути project settings -> webhooks создаем вебхук
+     с URL http://localhost:8080/sonarqube-webhook/
+
+     Примечания по принципу работы Quality Gate: покрытие тестами рассчитывается только для нового
+     кода, причем расчет покрытия идет от 30-40(примерно) новых строк. При меньшем кол-ве строк
+     может получится так, что код с 40-50% покрытия может пройти Quality Gate.
