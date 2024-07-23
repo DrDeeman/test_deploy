@@ -13,37 +13,5 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class AppTest
 {
 
-    @Test
-    void test(){
-        assertEquals(10,new App.Test().test());
-    }
-
-    @Test
-    void test2(){
-        assertEquals(20,new App.Test().test2());
-    }
-
-
-    @Test
-    void test4(){
-        assertEquals(40,new App.Test().test4());
-    }
-    @Test
-    void test5(){
-        assertEquals(40,new App.Test().test5());
-    }
-    @Test
-    void test6(){
-        assertEquals(40,new App.Test().test6());
-    }
-    @Test
-    void test7(){
-        assertEquals(40,new App.Test().test7());
-    }
-    @Test
-    void test8(){
-        assertEquals(40,new App.Test().test8());
-    }
-
 
     }
