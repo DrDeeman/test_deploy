@@ -19,7 +19,7 @@ public class App
                 new AnnotationConfigApplicationContext(App.class);
 
         System.out.println( "Hello World! I am alive" );
-        applicationContext.getBean(TestObject.class).getIdent();
+        //applicationContext.getBean(TestObject.class).getIdent();
     }
 
 

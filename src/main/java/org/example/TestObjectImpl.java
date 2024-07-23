@@ -2,6 +2,7 @@ package org.example;
 
 import jakarta.annotation.PostConstruct;
 import org.example.components.GeneratorValue;
+import org.example.components.PostProxy;
 import org.example.components.WrapperForMethods;
 import org.springframework.stereotype.Component;
 
@@ -23,7 +24,10 @@ public class TestObjectImpl implements TestObject{
         System.out.println("phase2:"+ident);
     }
 
+    @Override
+    @PostProxy
     public void getIdent(){
+        System.out.println("phase3");
         System.out.println("Value ident:"+ident);
     }
 }
