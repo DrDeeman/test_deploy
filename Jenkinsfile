@@ -1,5 +1,12 @@
 node{
 
+          NEXUS_VERSION = "nexus3"
+          NEXUS_PROTOCOL = "http"
+          NEXUS_URL = "127.0.0.1:8081"
+          NEXUS_REPOSITORY = "test_repository"
+          NEXUS_CREDENTIAL_ID = "nexus-user-credentials"
+
+
           stage('Fetch Code') {
                     git "https://github.com/DrDeeman/test_deploy.git"
                 }
@@ -35,6 +42,21 @@ node{
                    error "Quality Gate not allowed"
                 }
              }
+        }
+
+        stage("Load artifact in Nexus"){
+              nexusArtifactUploader(
+                                     nexusVersion: NEXUS_VERSION,
+                                     protocol: NEXUS_PROTOCOL,
+                                     nexusUrl: NEXUS_URL,
+                                     groupId: groupId,
+                                     version: version,
+                                     repository: NEXUS_REPOSITORY,
+                                     credentialsId: NEXUS_CREDENTIAL_ID,
+                                     files: [
+                                         [file: 'target/your-artifact.jar', classifier: '', type: 'jar']
+                                     ]
+                                 )
         }
 
 }
